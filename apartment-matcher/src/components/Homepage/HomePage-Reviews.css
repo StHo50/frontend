@@ -1,0 +1,42 @@
+.reviews {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+  }
+  
+  .reviews h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .reviews-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .review {
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    max-width: 250px;
+    text-align: center;
+  }
+  
+  .review img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .review p {
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .review h3 {
+    font-size: 1rem;
+    color: gray;
+  }
+  

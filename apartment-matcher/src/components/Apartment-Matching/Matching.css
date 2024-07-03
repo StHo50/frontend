@@ -1,0 +1,44 @@
+
+.matching-section p, h2{
+  text-align: center;
+}
+
+.matching-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .matching-form label {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .matching-form input,
+  .matching-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .matching-form button {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: center;
+  }
+  
+  .matching-form button:hover {
+    background-color: #45a049;
+  }
+  
