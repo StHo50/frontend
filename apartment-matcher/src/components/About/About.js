@@ -5,6 +5,8 @@ import Student2Img from '../../assets/student2.JPG';
 import Student3Img from '../../assets/student3.JPG';
 import Student4Img from '../../assets/student4.JPG';
 
+// TODO
+
 const About = () => {
   return (
     <section className="about">
