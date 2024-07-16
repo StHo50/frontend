@@ -8,10 +8,21 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Homepage/Home";
 import "./App.css";
+import { forSaleApartments } from "./data/for_sale_apartments";
+import { forRentApartments } from "./data/for_rent_apartments";
+import ApartmentsPage from "./pages/ApartmentsPage/ApartmentsPage";
 
 // Comment
 
 function App() {
+  const filteredForSaleApartments = forSaleApartments.filter(
+    (apartments) => apartments.images !== null
+  );
+
+  const filteredForRentApartments = forRentApartments.filter(
+    (apartments) => apartments.images !== null
+  );
+
   return (
     <Router>
       <Header />
@@ -25,6 +36,26 @@ function App() {
             element={<CustomerReviewsPage />}
           />
           <Route path="/contact" element={<Contact />} />
+          {/* TODO: remove the sliceing */}
+          <Route
+            path="/for_sale_apartements"
+            element={
+              <ApartmentsPage
+                apartments={filteredForSaleApartments.slice(1, 20)}
+                title={"דירות למכירה"}
+              />
+            }
+          />
+          {/* TODO: remove the sliceing */}
+          <Route
+            path="/for_rent_apartements"
+            element={
+              <ApartmentsPage
+                apartments={filteredForRentApartments.slice(1, 20)}
+                title={"דירות להשכרה"}
+              />
+            }
+          />
         </Routes>
       </main>
       <Footer />
