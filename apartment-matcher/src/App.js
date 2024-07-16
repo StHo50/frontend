@@ -11,6 +11,7 @@ import "./App.css";
 import { forSaleApartments } from "./data/for_sale_apartments";
 import { forRentApartments } from "./data/for_rent_apartments";
 import ApartmentsPage from "./pages/ApartmentsPage/ApartmentsPage";
+import ApartmentPage from "./pages/ApartmentPage/ApartmentPage";
 
 // Comment
 
@@ -56,6 +57,8 @@ function App() {
               />
             }
           />
+          <Route path="/apartment/:id" element={<ApartmentPage />} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </main>
       <Footer />
