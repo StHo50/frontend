@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./ApartmentMinimalCard.css";
 
 const fallbackUrl =
@@ -21,22 +22,24 @@ const ApartmentMinimalCard = ({ apartment }) => {
 
   return (
     <div className="apartment-minimal-card-container">
-      <div className="apartment-minimal-card-img-wrapper">
-        <img
-          className="apartment-minimal-card-img"
-          src={imgSrc}
-          alt="image"
-          height="240"
-          width="320"
-          onError={(e) => onImgError(e)}
-        />
-      </div>
-      <div className="apartment-minimal-card-content-wrapper">
-        <p>
-          {deal_type} - {beds} חדרים - קומה {floor} - {size} מ"ר
-        </p>
-        <p>{address}</p>
-      </div>
+      <Link to={`/apartment/${apartment.id}`}>
+        <div className="apartment-minimal-card-img-wrapper">
+          <img
+            className="apartment-minimal-card-img"
+            src={imgSrc}
+            alt="image"
+            height="240"
+            width="320"
+            onError={(e) => onImgError(e)}
+          />
+        </div>
+        <div className="apartment-minimal-card-content-wrapper">
+          <p>
+            {deal_type} - {beds} חדרים - קומה {floor} - {size} מ"ר
+          </p>
+          <p>{address}</p>
+        </div>
+      </Link>
     </div>
   );
 };
