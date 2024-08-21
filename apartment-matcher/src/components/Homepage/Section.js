@@ -14,7 +14,6 @@ const Section = () => {
             </p>
             <div className="section-buttons">
                 <Link to="/matching"><button>התאמת דירה</button></Link>
-                <Link to="/matching"><button>חיזוי עלות</button></Link>
             </div>
         </section>
     );
