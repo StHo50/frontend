@@ -83,7 +83,7 @@ const Matching = () => {
 
     // Sending the form using Axios
     try {
-      const response = await axios.post('http://localhost:3000/match', formData);
+      const response = await axios.post('http://localhost:5000/api/apartments/match', formData);
       console.log('Response:', response.data);
       //Here I should display all the matching apartments after the results return.
     } catch (error) {
