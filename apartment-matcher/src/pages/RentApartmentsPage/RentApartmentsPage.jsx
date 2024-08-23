@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ApartmentMinimalCard from "../../components/ApartmentMinimalCard/ApartmentMinimalCard";
-import "./ApartmentsPage.css";
+import "./RentApartmentsPage.css";
 
-const ApartmentsPage = ({ title }) => {
+const RentApartmentsPage = ({ title }) => {
   const [apartments, setApartments] = useState([]);
   const [filters, setFilters] = useState({
     rooms: "",
@@ -17,13 +17,16 @@ const ApartmentsPage = ({ title }) => {
 
   const fetchApartments = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/apartments/sale", {
-        params: {
-          beds: filters.rooms,
-          size_m2: filters.size,
-          price: filters.price,
-        },
-      });
+      const response = await axios.get(
+        "http://localhost:5000/api/apartments/rent",
+        {
+          params: {
+            beds: filters.rooms,
+            size_m2: filters.size,
+            price: filters.price,
+          },
+        }
+      );
       setApartments(response.data.apartments);
     } catch (error) {
       console.error("Error fetching apartments:", error);
@@ -37,11 +40,12 @@ const ApartmentsPage = ({ title }) => {
       [name]: value,
     }));
   };
+  console.log(apartments);
 
   return (
     <div className="apartments-page-container">
       <h1>{title}</h1>
-      
+
       {/* Filter Controls */}
       <div className="filters-container">
         <label>
@@ -75,7 +79,7 @@ const ApartmentsPage = ({ title }) => {
           />
         </label>
       </div>
-      
+
       <div className="apartments-page-cards-wrapper">
         {apartments.map((apartment, index) => {
           return <ApartmentMinimalCard key={index} apartment={apartment} />;
@@ -85,4 +89,4 @@ const ApartmentsPage = ({ title }) => {
   );
 };
 
-export default ApartmentsPage;
+export default RentApartmentsPage;

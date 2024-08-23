@@ -5,9 +5,7 @@ const fallbackUrl =
   "https://t3.ftcdn.net/jpg/01/05/82/76/360_F_105827660_Gifynz6B7PPcOvPsjW54zUMZI6G1VWlc.jpg";
 
 const ApartmentMinimalCard = ({ apartment }) => {
-  const { beds, floor, address, images, deal_type } = apartment;
-
-  const size = apartment["size_m^2"];
+  const { beds, floor, address, images, deal_type, size_m2 } = apartment;
 
   const onImgError = (e) => {
     e.target.src = fallbackUrl;
@@ -35,7 +33,7 @@ const ApartmentMinimalCard = ({ apartment }) => {
         </div>
         <div className="apartment-minimal-card-content-wrapper">
           <p>
-            {deal_type} - {beds} חדרים - קומה {floor} - {size} מ"ר
+            {deal_type} - {beds} חדרים - קומה {floor} - {size_m2} מ"ר
           </p>
           <p>{address}</p>
         </div>

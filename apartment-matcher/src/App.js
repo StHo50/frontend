@@ -8,21 +8,20 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Homepage/Home";
 import "./App.css";
-import { forSaleApartments } from "./data/for_sale_apartments";
-import { forRentApartments } from "./data/for_rent_apartments";
-import ApartmentsPage from "./pages/ApartmentsPage/ApartmentsPage";
 import ApartmentPage from "./pages/ApartmentPage/ApartmentPage";
+import RentApartmentsPage from "./pages/RentApartmentsPage/RentApartmentsPage";
+import SalesApartmentsPage from "./pages/SalesApartmentsPage/SalesApartmentsPage";
 
 // Comment
 
 function App() {
-  const filteredForSaleApartments = forSaleApartments.filter(
-    (apartments) => apartments.images !== null
-  );
+  // const filteredForSaleApartments = forSaleApartments.filter(
+  //   (apartments) => apartments.images !== null
+  // );
 
-  const filteredForRentApartments = forRentApartments.filter(
-    (apartments) => apartments.images !== null
-  );
+  // const filteredForRentApartments = forRentApartments.filter(
+  //   (apartments) => apartments.images !== null
+  // );
 
   return (
     <Router>
@@ -40,22 +39,12 @@ function App() {
           {/* TODO: remove the sliceing */}
           <Route
             path="/for_sale_apartements"
-            element={
-              <ApartmentsPage
-                apartments={filteredForSaleApartments.slice(1, 20)}
-                title={"דירות למכירה"}
-              />
-            }
+            element={<SalesApartmentsPage title={"דירות למכירה"} />}
           />
           {/* TODO: remove the sliceing */}
           <Route
             path="/for_rent_apartements"
-            element={
-              <ApartmentsPage
-                apartments={filteredForRentApartments.slice(1, 20)}
-                title={"דירות להשכרה"}
-              />
-            }
+            element={<RentApartmentsPage title={"דירות להשכרה"} />}
           />
           <Route path="/apartment/:id" element={<ApartmentPage />} />
           <Route path="*" element={<Home />} />
